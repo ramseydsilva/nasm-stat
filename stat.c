@@ -1,8 +1,5 @@
 #include <asm/stat.h>
 
-void puts(char*, int);
-void printlong(long);
-
 int len(char* c) {
     int l = 0;
     for (; *c !='\0'; c++, l++);
