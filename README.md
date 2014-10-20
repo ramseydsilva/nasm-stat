@@ -1,4 +1,4 @@
-nasm-tree
+nasm-stat
 =========
 
 Stat command implemented in NASM.
