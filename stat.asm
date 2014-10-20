@@ -6,8 +6,7 @@ global puts
 global printlong
 
 section .data
-file_label: db 'File: ', 6
-argc_error: db 'Usage: stat <dir>\n', 18
+argc_error: db 'Usage: stat <dir>', 0ah
 argc_error_len: equ 18
 buff_size: equ 600
 
@@ -17,8 +16,8 @@ contents: resb buff_size
 section .text
 
 main:
-    cmp rdi, 2           ; argc > 2
-    jne usage           ; show usage and exit
+    cmp rdi, 2              ; argc > 2
+    jne usage               ; show usage and exit
 
     mov rdi, [rsi+8]
     call statCall
@@ -71,6 +70,7 @@ usage:
     mov rdi, argc_error
     mov rsi, argc_error_len
     call puts
+
     call exit
 
 exit:

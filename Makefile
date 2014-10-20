@@ -5,6 +5,6 @@ all : base.o stat.o
 base.o :
 	nasm -felf64 stat.asm -o base.o
 stat.o :
-	gcc -nostdlib -c stat.c
+	gcc -nostdlib -c stat.c -o stat.o
 clean :
 	rm -rf *.o
